@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Address
+{% endblock %}
+
+{% block styles %}
+<style>
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .button {
+        font-size: 15px;
+        text-decoration: none;
+        border: 2px solid rgb(92, 185, 63);
+        background-color: rgb(36, 172, 36);
+        border-radius: 5px;
+        margin-left: 210px;
+        color: rgb(255, 255, 255);
+        padding: 10px 20px 10px 20px;
+    }
+
+    #options {
+        border-radius: 25px;
+        padding: 10px 150px 10px 40px;
+        border: 2px solid grey;
+        margin-bottom: 5px;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+
+    }
+
+    .rows:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .left {
+        margin-left: 100px;
+    }
+
+    .button:hover {
+        background-color: rgb(18, 138, 18);
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    h4 {
+        margin-top: 25px;
+    }
+
+    #cardno {
+        border-radius: 4px;
+        padding: 4px 8px 4px 4px;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<h3><i class="fas fa-check-circle"></i> Confirm Your Order</h3><br><br>
+<button class="btn btn-primary" id="enter_button">Enter Address</button>
+<button class="btn btn-primary" id="select">Select Address</button>
+<div id="enter-address">
+    <form action="/address" method="post">
+        <div class="rows">
+            <!-- <div class="column">
+                <div class="left">
+                    <h4><i class="fas fa-wallet"></i> Total Invoice amount : {{ total.total | rupees}}</h4>
+                    <h4>Choose Payment mode </h4>
+                    <h5><input type="radio" name="payment_mode" value="COD"><b> Cash On delivery </h5></b>
+                    <h5><input type="radio" name="payment_mode" value="Debit card"><b> Debit card </h5></b>
+                    <h5><input type="radio" name="payment_mode" value="Credit card"><b> Credit card </h5></b>
+                    <h5><input type="radio" name="payment_mode" value="UPI"><b> Upi Payment </h5></b>
+
+                    <h4><i class="far fa-credit-card"></i> Card Number </h4><input type="number" id="cardno">
+                </div>
+            </div> -->
+            <div class="column">
+                <b>
+                    <h4><i class="fas fa-map-marked-alt"></i> Enter Delivery address </h4>
+                </b>
+                <input type="text" id="options" placeholder="Flat No." autocomplete="off" autofocus name = "flat"><br>
+                <input type="text" id="options" placeholder="Building,Floor" autocomplete="off" autofocus name = "building"><br>
+                <input type="text" id="options" placeholder="Street/Locality" autocomplete="off" autofocus name = "street"><br>
+                <input type="text" id="options" placeholder="City" autocomplete="off" autofocus name = "city"><br>
+                <input type="number" id="options" placeholder="Pincode" autocomplete="off" autofocus name = "pincode"><br>
+                <input type="text" id="options" placeholder="Location e.g. Home,Office" autocomplete="off" autofocus name = "lname"><br>
+                <br>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" name="entered" value="address_enter">Pay</button>
+    </form>
+</div>
+
+<div id="select-address">
+    <form action="/address" method="post">
+        <div class="column">
+            <b>
+                <h4><i class="fas fa-map-marked-alt"></i> Select Delivery address </h4>
+            </b>
+            {% if address %}
+            <select name="address">
+            {% for a in address %}
+                <option value="{{ a.delivery_location_id }}">{{ a.address_name }} - {{ a.location_name }},{{ a.building_name }},{{ a.area_name }},{{ a.city }} {{ a.pincode }}</option>
+            {%  endfor %}
+            </select>
+            {% else %}
+            <h3>You have no saved addresses</h3>
+            {% endif %}
+            <br>
+        <button type="submit" class="btn btn-primary" value="selected" name="selected">Pay</button>
+    </div> 
+    </form>
+</div>
+
+<footer>
+    <img src="../static/footer.png" alt="" width="100%">
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+// By default, load the inbox
+load_select();
+
+// Use buttons to toggle between views
+document.querySelector('#select').addEventListener('click', () => load_select());
+document.querySelector('#enter_button').addEventListener('click', () => load_enter());
+});
+
+function load_select() {
+
+// Show the mailbox and hide other views
+document.querySelector('#select-address').style.display = 'block';
+document.querySelector('#enter-address').style.display = 'none';
+}
+
+function load_enter() {
+
+// Show the mailbox and hide other views
+document.querySelector('#select-address').style.display = 'none';
+document.querySelector('#enter-address').style.display = 'block';
+}
+</script>
+{% endblock %}

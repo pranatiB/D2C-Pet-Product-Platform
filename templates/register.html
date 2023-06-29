@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block styles %}
+<style>
+  body {
+    background-image: url(https://media.istockphoto.com/photos/young-woman-with-dog-picture-id1060529042?k=20&m=1060529042&s=612x612&w=0&h=Aufce7ZQETWvxwUgcB_09Crtd7LkhR1348C6LD8VG2c=);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .elements {
+  background-color: rgba(238, 230, 229, 0.726);
+  padding: 10px 20px 15px 20px;
+  border: 1px solid rgb(15, 15, 15);
+  margin: 4px;
+  border-radius: 5px;
+}
+
+.form_ele {
+  padding: 15px 4px 50px 750px;
+}
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  <form class="form_ele" action="/register" method="post">
+    <div class="elements">
+      <label for="formGroupExampleInput" class="form-label">First Name</label>
+      <input type="text" autocomplete="off" autofocus class="form-control" name = "firstname" placeholder="example: john">
+    </div>
+    <div class="elements">
+      <label for="formGroupExampleInput2" class="form-label">Last Name</label>
+      <input type="text" autocomplete="off" autofocus class="form-control" name="lastname" id="" placeholder="example: smith">
+    </div>
+    <div class="elements">
+      <label for="formGroupExampleInput" class="form-label">Username</label>
+      <input type="text" autocomplete="off" autofocus class="form-control" name = "username" id="" placeholder="Enter unique username">
+    </div>
+    <div class="elements">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" autocomplete="off" autofocus class="form-control" name="email" placeholder="john123@gmail.com">
+    </div>
+    <div class="elements">
+      <label for="contactno">Contact Number</label>
+      <input type="number" autocomplete="off" autofocus class="form-control" name="contact_no" id="">
+    </div>
+    <div class="elements">
+      <label for="formGroupExampleInput" class="form-label">Password</label>
+      <input type="password" autocomplete="off" autofocus class="form-control" name="password" id="" placeholder="abc#@123">
+    </div>
+    <div class="elements">
+      <label for="formGroupExampleInput" class="form-label">Confirm Password</label>
+      <input type="password" autocomplete="off" autofocus class="form-control" name="confirm_password">
+    </div>
+    </select>
+    <div class="elements">
+      <button type="submit" class="btn btn-success">Register</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

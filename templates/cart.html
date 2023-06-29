@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Cart
+{% endblock %}
+
+{% block styles%}
+<style>
+    table {
+        margin: auto;
+        border-collapse: collapse;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        counter-reset: sr;
+    }
+
+    th,
+    td {
+        border-collapse: collapse;
+        border-bottom: 1px solid black;
+        padding: 9px 50px 9px 50px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .cart-button {
+        margin-left: 870px;
+        font-size: 15px;
+        text-decoration: none;
+        border: none;
+        /* background-color: rgb(36, 172, 36); */
+        border-radius: 4px;
+        padding: 6px 16px 6px 16px;
+        /* color: white; */
+    }
+
+    .cart-button:hover {
+        background-color: rgb(138, 18, 46);
+    }
+
+    footer {
+        /* position: fixed; */
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    th {
+        color: rgb(220, 229, 233);
+    }
+
+    tr:hover td{
+        background-color: rgb(233, 229, 218);
+    }
+
+
+    b::before {
+        counter-increment: sr;
+        content: counter(sr);
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<h2>{{ name.firstname }}'s Cart <i class="fas fa-shopping-cart"></i></h2>
+<form action="/cart" method="post">
+<table class="table table-hover">
+    <thead class="table-dark">
+        <th>SNo.</th>
+        <th>Product Name </th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Expiry Date</th>
+        <th>Remove</th>
+    </thead>
+
+    {% for row in records %}
+    <tr>
+        <td><b>.</b></td>
+        <td id="{{ row.prod_id }}">{{ row.name }}</td>
+        <td>{{ row.price | rupees }}</td>
+        <td>{{ row.quantity }}</td>
+        <td>{{ (row.price*row.quantity) | rupees}}</td>
+        <td>{{ row.expiry_date }}</td>
+        <td><button type="submit" name="remove_button" id="{{ row.cart_id }}" value="{{ row.cart_id }}"><i class="fas fa-times-circle fa-lg"></i></button></td>
+    </tr>
+    {% endfor %}
+</table>
+<h2>Your grand total is {{ total.total | rupees }}</h2>
+    <button type="submit" class="cart-button" name="address" value="address" style="margin-left: 870px;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    background-color: rgb(36, 172, 36);
+    border-radius: 4px;
+    padding: 6px 16px 6px 16px;
+    color: white;
+    margin-bottom: 10px;
+    ">Confirm order</button>
+</form>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block styles %}
+<style>
+    .gfg {
+    position: fixed;
+    text-align: center;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+.first-txt {
+    position: absolute;
+    top: -20%;
+    left: 35%;
+    font-size: 400%;
+    font-style: oblique;
+    }
+
+.second-txt {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    font-size: 350%;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transform: translate(-50%, -50%);
+}
+</style>
+{% endblock %}
+
+{% block main %}
+    <div class="gfg">
+        <img src="../static/apology.jpeg">
+        <h3 class="first-txt">
+            Error {{ top }}
+        </h3>
+
+        <h3 class="second-txt">
+            {{ bottom }}
+        </h3>
+    </div>
+{% endblock %}

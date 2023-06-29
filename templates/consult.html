@@ -1,0 +1,330 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Consult
+{% endblock %}
+
+{% block main %}  
+
+  <!-- <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult a Vet</title>
+  </head>
+  <body> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+      <section
+      class="overflow bg-[url(http://consultvet.in/wp-content/uploads/2021/04/pexels-tima-miroshnichenko-6235018-scaled.jpg)] bg-cover bg-center bg-no-repeat">
+      <div class="bg-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
+          <br></br><br></br>
+        <div class="max-w-lg text-center sm:text-left">
+          <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl">
+              NEED VETERINARIAN?
+              FIND ONE HERE!
+          </h2>
+    
+          <p
+            class= max-w-md text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed"
+          >
+            PetOzone is here to help you out with bringing care for your dogs and cats closer to you
+          </p><br></br><br></br>
+        </div>
+      </div>
+    </section>
+  
+  <!-- About Section: -->
+    <section class="bg-white-900 text-black">
+      <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-lg text-center">
+          <h2 class="text-3xl font-bold sm:text-4xl">Curated by vets for your pet's unique needs</h2>
+    
+          <p class="mt-4 text-gray-700">
+          Vets like these will always give your pet a life!
+          </p>
+        </div>
+    
+        <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <a
+            class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-yellow-500/10 hover:shadow-yellow-500/10"        >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-yellow-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              />
+            </svg>
+    
+            <h2 class="mt-4 text-xl font-bold text-black">Dog Consultation</h2>
+    
+            <p class="mt-1 text-sm text-gray-700">
+              Nutrition Consultation
+  
+  Dog Parenting Management
+  
+  Behavioral Training Tips (Aggression, Biting, Jumping)
+            </p>
+          </a>
+    
+          <a
+            class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-yellow-500/10 hover:shadow-yellow-500/10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-yellow-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              />
+            </svg>
+    
+            <h2 class="mt-4 text-xl font-bold text-black">Cat Consultation</h2>
+    
+            <p class="mt-1 text-sm text-gray-700">
+              Nutrition Consultation
+  
+  Cat Parenting Management
+  
+  Understanding Cat Signs/Behaviour (Bitting, Itching, Too Much Sleeping)
+            </p>
+          </a>
+    
+          <a
+            class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-yellow-500/10 hover:shadow-yellow-500/10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-yellow-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              />
+            </svg>
+    
+            <h2 class="mt-4 text-xl font-bold text-black">Tell us more about your pet and yourself</h2>
+    
+            <p class="mt-1 text-sm text-gray-700">
+              Tell us more about your pet and yourself
+            </p>
+          </a>
+      </div>
+      </div>
+    </section>
+    
+  <!-- Next section -->
+    <section class="bg-[#102349] text-white">
+          <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="text-center">
+              <h2 class="text-3xl font-bold sm:text-4xl">WE BRIDGE THE GAP IN ANIMAL HEALTHCARE!</h2>
+        
+              <p class="mt-4 text-gray-300">
+              Connect with a licensed veterinarian in minutes and get quality advice from the comfort of your home.
+              </p>
+            </div>
+            </div>
+    </section>
+    
+  <!-- Cards -->
+   
+  
+  
+  <section class="mx-72">
+      <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-2xl font-bold sm:text-4xl">Veterinarians in Your Locality</h2>
+            </div>
+      </div>
+  <a
+    class="relative block overflow rounded-lg border border-gray-100 p-8">
+    <span
+      class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-yellow-300 via-blue-500 to-yellow-600"
+    ></span>
+  
+    <div class="justify-between sm:flex">
+      <div>
+        <h3 class="text-xl font-bold text-gray-900">
+          Dr. Draco Malfoy
+        </h3>
+  
+        <p class="mt-1 text-xs font-medium text-gray-600">Lets save your pets!</p>
+      </div>
+  
+      <div class="ml-3 flex-shrink-0 sm:block">
+        <img
+          alt="Draco"
+          src="https://imgs.search.brave.com/A8gGzq7MkWoCQAF8VLS3yQ2LTqh88oPQDsku3p2b_a8/rs:fit:794:790:1/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzIzNjM5MjMwL3Iv/aWwvYWFlN2RiLzI1/NDY3MTEzNDgvaWxf/Nzk0eE4uMjU0Njcx/MTM0OF9hcjd3Lmpw/Zw"
+          class="h-32 w-30 rounded-lg object-cover shadow-sm"
+        />
+      </div>
+    </div>
+  
+    <div class="mt-4 sm:pr-8">
+      <p class="text-sm text-gray-500">
+          B.V.Sc & A.H, M.V.Sc Veterinary Surgery & Radiology, PhD. Scholar
+          <p>6+ years of professional experience</p>
+      </p>
+    </div>
+  
+    <dl class="mt-6 flex">
+      <div class="flex flex-col-reverse">
+        <dt class="text-sm font-medium text-gray-600">Ratings</dt>
+        <dd class="text-xs text-gray-500">4.5/5</dd>
+      </div>
+  
+      <div class="ml-3 flex flex-col-reverse sm:ml-6">
+        <dt class="text-sm font-medium text-gray-600">Consultation Charges</dt>
+        <dd class="text-xs text-gray-500">₹300</dd>
+      </div>
+    </dl>
+  </a>
+  <br></br>
+  <!-- Second doc -->
+  <a
+    class="relative block overflow rounded-lg border border-gray-100 p-8"
+  >
+    <span
+      class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-yellow-300 via-blue-500 to-yellow-600"
+    ></span>
+  
+    <div class="justify-between sm:flex">
+      <div>
+        <h3 class="text-xl font-bold text-gray-900">
+          Dr. Hermoine Granger
+        </h3>
+  
+        <p class="mt-1 text-xs font-medium text-gray-600">Do not worry! Your pet is in great hands</p>
+      </div>
+  
+      <div class="ml-3 flex-shrink-0 sm:block">
+        <img
+          alt="Draco"
+          src="https://imgs.search.brave.com/xZ_mLo55PjLUjUE9CIFID2PdgnSIX8gEplcYUElTNmI/rs:fit:1024:768:1/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC8zODJhTFA1/LmpwZw"
+          class="h-32 w-30 rounded-lg object-cover shadow-sm"
+        />
+      </div>
+    </div>
+  
+    <div class="mt-4 sm:pr-8">
+      <p class="text-sm text-gray-500">
+          B.V.Sc & A.H, M.V.Sc Veterinary Surgery & Radiology, PhD. Scholar
+          <p>14+ years of professional experience</p>
+      </p>
+    </div>
+  
+    <dl class="mt-6 flex">
+      <div class="flex flex-col-reverse">
+        <dt class="text-sm font-medium text-gray-600">Ratings</dt>
+        <dd class="text-xs text-gray-500">5/5</dd>
+      </div>
+  
+      <div class="ml-3 flex flex-col-reverse sm:ml-6">
+        <dt class="text-sm font-medium text-gray-600">Consultation Charges</dt>
+        <dd class="text-xs text-gray-500">₹1000</dd>
+      </div>
+    </dl>
+  </a>
+  <br></br>
+  <!-- Third doc -->
+  <a
+    class="relative block overflow rounded-lg border border-gray-100 p-8"
+  >
+    <span
+      class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-yellow-300 via-blue-500 to-yellow-600"
+    ></span>
+  
+    <div class="justify-between sm:flex">
+      <div>
+        <h3 class="text-xl font-bold text-gray-900">
+          Dr. Neville Longbottoms
+        </h3>
+  
+        <p class="mt-1 text-xs font-medium text-gray-600">I don't know if I will save your pet, but I will try!</p>
+      </div>
+  
+      <div class="ml-3 flex-shrink-0 sm:block">
+        <img
+          alt="Neville"
+          src="https://imgs.search.brave.com/vRa1JIAhYaXzw9FmvgDP0PGmQV2XaA_pcrH94RPRWko/rs:fit:1024:768:1/g:ce/aHR0cDovL2ltYWdl/czYuZmFucG9wLmNv/bS9pbWFnZS9waG90/b3MvMzU0MDAwMDAv/TmV2aWxsZS1Mb25n/Ym90dG9tLVdhbGxw/YXBlci1uZXZpbGxl/LWxvbmdib3R0b20t/MzU0NDMyNTktMTAy/NC03NjguanBn"
+          class="h-32 w-30 rounded-lg object-cover shadow-sm"/>
+      </div>
+    </div>
+  
+    <div class="mt-4 sm:pr-8">
+      <p class="text-sm text-gray-500">
+          B.V.Sc & A.H, M.V.Sc Veterinary Surgery & Radiology, PhD. Scholar
+          <p>2+ years of professional experience</p>
+      </p>
+    </div>
+  
+    <dl class="mt-6 flex">
+      <div class="flex flex-col-reverse">
+        <dt class="text-sm font-medium text-gray-600">Ratings</dt>
+        <dd class="text-xs text-gray-500">5/5</dd>
+      </div>
+  
+      <div class="ml-3 flex flex-col-reverse sm:ml-6">
+        <dt class="text-sm font-medium text-gray-600">Consultation Charges</dt>
+        <dd class="text-xs text-gray-500">₹190</dd>
+      </div>
+    </dl>
+  </a>
+  
+  </section>
+  <br></br><br></br>
+  
+  <!-- About section 2 -->
+  <section class="bg-gray-900 text-white">
+      <div class=" px-1 py-16">
+        <div class="mx-auto max-w-screen-xl text-center">
+          <h4 class="text-3xl font-awesome">
+              ThePetNest is India’s Most Trusted Online Veterinary Health Care Consultation Service provider. Experienced veterinarians provide immediate, personalized and expert answers to your concerns.
+          </h2>
+    
+        </div>
+        </div>
+        </section>
+  
+  
+  <section class="overflow mx-auto">
+      <img src="/static/consultVet.png">
+  </section>
+  
+  <!-- </body>
+  </html> -->
+
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+        background-image: url(../static/cat_dog.jpg);
+
+        background-repeat: no-repeat;
+        background-size: full;
+    }
+
+    .card {
+        display: inline-flex;
+        margin: 8px 15px 8px 20px;
+        border-radius: 8px;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="card">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <a href="/dogs"> <img src="../static/dog.jfif" class="img-fluid rounded-start" alt="Dogs"> </a>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-title"><b>Shop for Dogs</b></h4>
+                    <p class="card-text">We make it a point to stock up on everything you may need for your doggie.
+                        From everyday essentials like dog food to special dog products like jackets, occasion wear,
+                        Walk Accessories, Grooming essentials, and so on. Whether your pet is a young pup or a
+                        golden oldie, our inventory has plenty to cater to every life stage.
+                        Explore the collection and get the best dog products for your doggy!</p>
+                    <p class="card-text"><small class="text-muted"><i>Dog leave paw prints on our hearts!</i></small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <a href="/dogs"> <img src="../static/cat.jpg" class="img-fluid rounded-start" alt="Cats"> </a>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-title"><b>Shop for Cats</b> </h4>
+                    <p class="card-text">Is a feline currently ruling your home and your heart? Then, this is
+                        just the right place for you. From a variety of delectable cat food options to a range
+                        of toys, cat grooming products, cat litter, and so on. Cats are loving, delightful
+                        companions who need things to be just right. This is why we do our best to make sure
+                        that you have plenty of cat products to choose from and can find exactly what works for
+                        your furry.</p>
+                    <p class="card-text"><small class="text-muted"><i> What greater gift than the love of a
+                                cat!</i></small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

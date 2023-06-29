@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Orders
+{% endblock %}
+
+{% block styles %}
+<style>
+    table {
+        margin: auto;
+        border: 2px solid black;
+        border-collapse: collapse;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        background-color: white;
+    }
+
+    th,
+    td {
+        border-collapse: collapse;
+        border-bottom: 1px solid black;
+        padding: 9px 35px 9px 35px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    h2 {
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .button {
+        margin-left: 870px;
+        font-size: 15px;
+        text-decoration: none;
+        border: none;
+        background-color: rgb(36, 172, 36);
+        border-radius: 4px;
+        padding: 6px 16px 6px 16px;
+        color: white;
+    }
+
+    .button:hover {
+        background-color: rgb(18, 138, 18);
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    th {
+        color: rgb(253, 249, 249);
+        background-color: rgb(46, 45, 45);
+    }
+
+    tr:hover td {
+        background-color: rgb(218, 218, 218);
+    }
+
+    #amount {
+        padding-left: 200px;
+    }
+
+    body {
+        background-image: url(img/bg_orders.jpg);
+        background-position-y: 100px;
+        background-position-x: 860px;
+        background-repeat: no-repeat;
+    }
+</style>
+
+{% endblock %}
+
+{% block main %}
+<h2><img src="https://webstockreview.net/images/pet-clipart-12.png" alt="" height="70px"> My Orders </h2>
+<table class="table-striped table-hover" border="2px">
+    <tr>
+        <th>Order Id</th>
+        <th>Products</th>
+        <th>Quantity</th>
+        <th>Invoice Amount</th>
+        <th>Order date</th>
+        <th>Delivery date</th>
+        <th>Shipment status</th>
+    </tr>
+    
+    {% for row in order %}
+    <tr>
+        <td>{{ row.order_id }}</td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.quantity }}</td>
+        <td>{{ row.invoice_amt | rupees }}</td>
+        <td>{{ row.order_date }}</td>
+        <td>{{ row.delivery_date }}</td>
+        <td>{{ row.shipment_status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<footer>
+    <img src="../static/footer.png" alt="" width="100%">
+</footer>
+{% endblock %}

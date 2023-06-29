@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Log In
+{% endblock %}
+
+{% block styles %}
+<style>
+    .username {
+        padding: 20px 20px 20px 20px;
+        border: 1px solid rgb(15, 15, 15);
+        margin: 120px 300px 0px 300px;
+        border-radius: 4px;
+    }
+
+    .password {
+        padding: 20px 20px 20px 20px;
+        border: 1px solid rgb(15, 15, 15);
+        margin: 1px 300px 0px 300px;
+        border-radius: 4px;
+    }
+
+    h6 {
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    #logbtn {
+        padding: 10px 212px;
+        border-radius: 4px;
+        background-color: rgb(31, 112, 121);
+        color: rgb(255, 255, 255);
+        font-size: larger;
+        border-style: none;
+
+    }
+    b{
+        display: flex;
+        justify-content: center;
+    }
+    #logbtn:hover {
+        background-color: rgb(10, 107, 117);
+    }
+
+    body {
+        background-image: url(../static/bg_login.jpg);
+        background-size: cover;
+        background-repeat: none;
+    }
+
+    .text {
+        background-color: transparent;
+        border-style: none;
+        padding: 3px 80px 3px 10px;
+
+        color: rgb(10, 10, 10);
+    }
+
+    ::placeholder {
+        color: black;
+
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<h1><img src="../static/PetOZone.png" alt="" height="37px">Log in</h1>
+<form action="/login" method="post">
+    <div class="username">
+        <i class="fas fa-user"></i>
+        <input type="text" class="text" placeholder="Enter Username" name ="username" autocomplete="off" autofocus >
+    </div>
+    <br>
+    <div class="password">
+        <i class="fas fa-lock"></i>
+        <input type="password" autocomplete="off" autofocus class="text" placeholder="Enter Password" name="password">
+    </div>
+    <br>
+    <b><button type="submit" id="logbtn">Log in</button></b>
+</form>
+<div>
+    <h6 id="text">Don't have an account? <a href="/register">Register</a></h6>
+</div>
+{% endblock %}

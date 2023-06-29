@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Blogs
+{% endblock%}
+
+{% block main %}
+    <div class="container">
+            {% for res in data %}
+            <div class="card">
+                <div class="card__header">
+                  <img src="{{res.image_url}}" alt="card__image" class="card__image" width="600">
+                </div>
+                <div class="card__body">
+                  <h4>{{res.title}}</h4>
+                  <p>{{res.desc}}</p>
+                </div>
+                <div class="card__footer">
+                  <div class="user"> 
+                    <div class="user__info">
+                      <h5>{{res.author}}</h5>
+                      <small>{{res.dateupd}}</small>
+                    </div>
+                    <a class="read_more" href="{{res.link}}">Read More</a>        
+                  </div>
+                </div>
+              </div>            
+            {% endfor %}
+    </div>
+{% endblock%}

@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Pay
+{% endblock %}
+
+{% block main %}  
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Orders</title>
+</head>
+<body> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<section>
+    <h1 class="sr-only">Confirm Your Order</h1>
+  
+    <div class="relative mx-auto max-w-screen-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="bg-gray-50 py-12 md:py-24">
+          <div class="mx-auto max-w-lg px-4 lg:px-8">
+            <div class="flex items-center">
+              <span class="h-10 w-10 rounded-full bg-blue-900"></span>
+  
+              <h2 class="ml-4 font-medium">PetOzone</h2>
+            </div>
+  
+            <div class="mt-8">
+              <!-- <p class="text-2xl font-medium tracking-tight">Total purchase: ₹849</p> -->
+              <p class="mt-1 text-ml text-gray-500">You have shopped for</p>
+            </div>
+  <!-- First purchase -->
+          {% for record in records %}
+          <div class="mt-8">
+            <div class="flow-root">
+              <ul class="-my-4 divide-y divide-gray-200">
+                <li class="flex items-center justify-between py-20">
+                  <div class="flex items-start">
+                    <img
+                      alt="{{ record.name }}"
+                      src="/static/{{record.name}}.jpg"
+                      class="h-44 w-46 flex-shrink-0 rounded-lg object-cover"/>
+                    <div class="ml-4">
+                      <p class="text-lg">{{record.name}}</p>
+
+                      <dl class="mt-1 space-y-1 text-xl text-gray-500">
+                        <div>
+                          <dt class="inline">Quantity:</dt>
+                          <dd class="inline">{{record.quantity}}</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p class="text-lg">
+                      {{ record.price | rupees }}
+                      <small class="text-gray-500 text-xl">x {{ record.quantity }}</small>
+                    </p>
+                  </div>
+                </li>
+                {% endfor %}
+                  <!-- Second purchase -->
+                  
+                </ul>
+              </div>
+            </div>
+            <br></br>
+            <div class="mt-8">
+                <p class="text-2xl font-medium tracking-tight">Total purchase: {{ total.total | rupees }}</p>
+                <p class="mt-1 text-ml text-gray-500">Yay! Now all you gotta do is pay for your precious pets. </p>
+                <p class="mt-1 text-ml text-gray-500">Check your billing address please! </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="bg-white py-12 md:py-24">
+          <div class="mx-auto max-w-lg px-4 lg:px-8">
+            <form class="grid grid-cols-6 gap-4">
+  
+              <fieldset class="col-span-6">
+                <legend class="mb-1 block text-ml text-gray-800">
+                  Billing Address
+                </legend>
+  
+                <div class="-space-y-px rounded-lg bg-white shadow-sm"> 
+                  <p class="text-gray-600"> {{ address }}</p>
+                </div>
+              </fieldset>
+  
+              <div class="col-span-5">
+                <button
+                  class="block w-full rounded-lg bg-black p-2.5 text-lg text-white"
+                  type="submit" id="rzp-button1">
+                  Pay Now
+                </button>
+                <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                <script>
+                var options = {
+                    "key": "{{razor_id}}", // Enter the Key ID generated from the Dashboard
+                    "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    "currency": "INR",
+                    "name": "PetOZone",
+                    "description": "Test Transaction",
+                    "image": "https://example.com/your_logo",
+                    "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                    "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+                    "prefill": {
+                        "name": "Anmol Chokshi",
+                    },
+                    "handler": function (response){
+                    alert(response.razorpay_payment_id);
+                    alert("Payment Successful");},
+                    "notes": {
+                        "address": "Razorpay Corporate Office"
+                    },
+                    "theme": {
+                        "color": "#3399cc"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                document.getElementById('rzp-button1').onclick = function(e){
+                    rzp1.open();
+                    e.preventDefault();
+                }
+                </script> 
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
